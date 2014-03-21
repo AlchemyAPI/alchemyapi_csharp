@@ -29,4 +29,6 @@ dmcs author.cs -r:System.Data.dll -r:System.Web.dll -r:../module/AlchemyAPI.dll
 dmcs combined.cs -r:System.Data.dll -r:System.Web.dll -r:../module/AlchemyAPI.dll
  
 dmcs taxonomy.cs -r:System.Data.dll -r:System.Web.dll -r:../module/AlchemyAPI.dll
+
+dmcs image.cs -r:System.Data.dll -r:System.Web.dll -r:../module/AlchemyAPI.dll
  

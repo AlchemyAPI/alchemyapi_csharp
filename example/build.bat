@@ -29,3 +29,4 @@ csc combined.cs -r:System.Data.dll -r:System.Web.dll -r:AlchemyAPI.dll
  
 csc taxonomy.cs -r:System.Data.dll -r:System.Web.dll -r:AlchemyAPI.dll
  
+csc image.cs -r:System.Data.dll -r:System.Web.dll -r:AlchemyAPI.dll
