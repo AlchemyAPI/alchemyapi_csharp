@@ -9,7 +9,10 @@ namespace AlchemyAPI
 		{
 			NONE,
 			XML,
-			RDF
+			JSON,
+			RDF,
+			RelTag,
+			RelTagRaw
 		};
 
 		private String url;
@@ -23,9 +26,10 @@ namespace AlchemyAPI
 			return url;
 		}
 
-		public void setUrl(String url)
+		public AlchemyAPI_BaseParams setUrl(String url)
 		{
 			this.url = url;
+			return this;
 		}
 
 		public String getHtml()
@@ -33,9 +37,10 @@ namespace AlchemyAPI
 			return html;
 		}
 
-		public void setHtml(String html)
+		public AlchemyAPI_BaseParams setHtml(String html)
 		{
 			this.html = html;
+			return this;
 		}
 
 		public String getText()
@@ -43,9 +48,10 @@ namespace AlchemyAPI
 			return text;
 	   	}
 
-		public void setText(String text)
+		public AlchemyAPI_BaseParams setText(String text)
 		{
 			this.text = text;
+			return this;
 		}
 
 		public OutputMode getOutputMode()
@@ -53,9 +59,10 @@ namespace AlchemyAPI
 			return outputMode;
 		}
 
-		public void setOutputMode(OutputMode outputMode)
+		public AlchemyAPI_BaseParams setOutputMode(OutputMode outputMode)
 		{
 			this.outputMode = outputMode;
+			return this;
 		}
 
 		public String getCustomParameters()
@@ -63,7 +70,7 @@ namespace AlchemyAPI
 			return customParameters;
 		}
 
-		public void setCustomParameters(params object[] argsRest)
+		public AlchemyAPI_BaseParams setCustomParameters(params object[] argsRest)
 		{
 			string returnString = "";
 
@@ -75,6 +82,7 @@ namespace AlchemyAPI
 			}
 
 			this.customParameters = returnString;
+			return this;
 		}
 
 		public void resetBaseParams()
@@ -84,7 +92,7 @@ namespace AlchemyAPI
 			text = null;
 		}
 
-		virtual public String getParameterString()
+		public virtual String getParameterString()
 		{
 			String retString = "";
 
@@ -94,10 +102,27 @@ namespace AlchemyAPI
 			if (customParameters!=null) retString+=customParameters;
 			if (outputMode != OutputMode.NONE)
 			{
-				if (outputMode == OutputMode.XML)
-					retString += "&outputMode=xml";
-				else if (outputMode == OutputMode.RDF)
-					retString += "&outputMode=rdf";
+				retString += "&outputMode=";
+				switch (outputMode)
+				{
+				case OutputMode.XML:
+					retString += "xml";
+					break;
+				case OutputMode.JSON:
+					retString += "json";
+					break;
+				case OutputMode.RDF:
+					retString += "rdf";
+					break;
+				case OutputMode.RelTag:
+					retString += "rel-tag";
+					break;
+				case OutputMode.RelTagRaw:
+					retString += "rel-tag-raw";
+					break;
+				default:
+					throw new ArgumentException("Unsupported output mode '" + outputMode + "'.");
+				}
 			} 
 
 			return retString;

@@ -68,7 +68,8 @@ public class AlchemyAPI
 			throw ex;
 		}
 	}
-		
+
+	#region GetAuthor
 	public string URLGetAuthor(string url)
 	{
 		CheckURL(url);
@@ -99,7 +100,9 @@ public class AlchemyAPI
 			
 		return POST("HTMLGetAuthor", "html", parameters);
 	}	
+	#endregion
 
+	#region GetRankedNamedEntities
 	public string URLGetRankedNamedEntities(string url)
 	{
 		CheckURL(url);
@@ -146,7 +149,9 @@ public class AlchemyAPI
 
 		return POST("TextGetRankedNamedEntities", "text", parameters);
 	}
+	#endregion
  
+	#region GetRankedConcepts
 	public string URLGetRankedConcepts(string url)
 	{
 		CheckURL(url);
@@ -192,7 +197,9 @@ public class AlchemyAPI
 
 		return POST("TextGetRankedConcepts", "text", parameters);
 	}
-
+	#endregion
+	
+	#region GetRankedKeywords
 	public string URLGetRankedKeywords(string url)
 	{
 		CheckURL(url);
@@ -238,7 +245,9 @@ public class AlchemyAPI
 
 		return POST("TextGetRankedKeywords", "text", parameters);
 	}
+	#endregion
 
+	#region GetLanguage
 	public string URLGetLanguage(string url)
 	{
 		CheckURL(url);
@@ -284,7 +293,9 @@ public class AlchemyAPI
 
 		return POST("TextGetLanguage", "text", parameters);
 	}
+	#endregion
 	
+	#region GetCategory
 	public string URLGetCategory(string url)
 	{
 		CheckURL(url);
@@ -330,7 +341,9 @@ public class AlchemyAPI
 
 		return POST("TextGetCategory", "text", parameters);
 	}
-
+	#endregion
+	
+	#region GetText
 	public string URLGetText(string url)
 	{
 		CheckURL(url);
@@ -361,7 +374,9 @@ public class AlchemyAPI
 
 		return POST("HTMLGetText", "html", parameters);
 	}
+	#endregion
 
+	#region GetRawText
 	public string URLGetRawText(string url)
 	{
 		CheckURL(url);
@@ -392,7 +407,9 @@ public class AlchemyAPI
 
 		return POST("HTMLGetRawText", "html", parameters);
 	}
+	#endregion
 
+	#region GetTitle
 	public string URLGetTitle(string url)
 	{
 		CheckURL(url);
@@ -424,7 +441,9 @@ public class AlchemyAPI
 
 		return POST("HTMLGetTitle", "html", parameters);
 	}
+	#endregion
 	
+	#region GetFeedLinks
 	public string URLGetFeedLinks(string url)
 	{
 		CheckURL(url);
@@ -455,7 +474,9 @@ public class AlchemyAPI
 
 		return POST("HTMLGetFeedLinks", "html", parameters);
 	}
+	#endregion
 	
+	#region GetMicroformats
 	public string URLGetMicroformats(string url)
 	{
 		CheckURL(url);
@@ -486,7 +507,9 @@ public class AlchemyAPI
 
 		return POST("HTMLGetMicroformatData", "html", parameters);
 	}
+	#endregion
 
+	#region GetConstraintQuery
 	public string URLGetConstraintQuery(string url, string query)
 	{
 		CheckURL(url);
@@ -553,7 +576,9 @@ public class AlchemyAPI
 
 		return POST("HTMLGetConstraintQuery", "html", parameters);
 	}
+	#endregion
 	
+	#region GetTextSentiment
 	public string URLGetTextSentiment(string url)
 	{
 		CheckURL(url);
@@ -599,7 +624,9 @@ public class AlchemyAPI
 
 		return POST("TextGetTextSentiment", "text", parameters);
 	}
-	//------
+	#endregion
+
+	#region GetTargetedSentiment
 	public string URLGetTargetedSentiment(string url, string target)
 	{
 		CheckURL(url);
@@ -658,8 +685,9 @@ public class AlchemyAPI
 			
 		return POST("TextGetTargetedSentiment", "text", parameters);
 	}
-	//------
+	#endregion
 
+	#region GetRelations
 	public string URLGetRelations(string url)
 	{
 		CheckURL(url);
@@ -705,6 +733,24 @@ public class AlchemyAPI
 
 		return POST("TextGetRelations", "text", parameters);
 	}
+	#endregion
+
+	#region GetCombinedData
+	public string URLGetCombinedData(string url, AlchemyAPI_CombinedDataParams parameters)
+	{
+		CheckURL(url);
+		parameters.setUrl(url);
+
+		return GET ("URLGetCombinedData", "url", parameters);
+	}
+	public string TextGetCombinedData(string text, AlchemyAPI_CombinedDataParams parameters)
+	{
+		CheckText(text);
+		parameters.setText(text);
+
+		return POST ("TextGetCombinedData", "text", parameters);
+	}
+	#endregion
 
 	private void CheckHTML(string html, string url)
 	{

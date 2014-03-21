@@ -69,9 +69,9 @@
     <Compile Include="..\AlchemyAPI_TextParams.cs">
       <Link>AlchemyAPI_TextParams.cs</Link>
     </Compile>
+    <Compile Include="..\AlchemyAPI_CombinedDataParams.cs">
+      <Link>AlchemyAPI_CombinedDataParams.cs</Link>
+    </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
-  <ItemGroup>
-    <Folder Include="sdk\" />
-  </ItemGroup>
 </Project>

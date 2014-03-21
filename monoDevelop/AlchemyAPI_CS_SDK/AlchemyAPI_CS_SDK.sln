@@ -7,6 +7,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Examples", "Examples", "{7D
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "author", "..\..\example\author\author.csproj", "{E61EB529-E86A-4273-940F-FA4A99378E92}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "combined", "..\..\example\combined\combined.csproj", "{DC4C1286-3B69-4826-AA74-AAC87B34E4ED}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,6 +19,10 @@ Global
 		{799E354F-E323-408C-9733-7F1896342663}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{799E354F-E323-408C-9733-7F1896342663}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{799E354F-E323-408C-9733-7F1896342663}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DC4C1286-3B69-4826-AA74-AAC87B34E4ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DC4C1286-3B69-4826-AA74-AAC87B34E4ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DC4C1286-3B69-4826-AA74-AAC87B34E4ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DC4C1286-3B69-4826-AA74-AAC87B34E4ED}.Release|Any CPU.Build.0 = Release|Any CPU
 		{E61EB529-E86A-4273-940F-FA4A99378E92}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{E61EB529-E86A-4273-940F-FA4A99378E92}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E61EB529-E86A-4273-940F-FA4A99378E92}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -24,6 +30,7 @@ Global
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{E61EB529-E86A-4273-940F-FA4A99378E92} = {7D111981-ED8F-4E06-B135-A72B4278C6D4}
+		{DC4C1286-3B69-4826-AA74-AAC87B34E4ED} = {7D111981-ED8F-4E06-B135-A72B4278C6D4}
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
 		StartupItem = ..\..\module\sdk\sdk.csproj
