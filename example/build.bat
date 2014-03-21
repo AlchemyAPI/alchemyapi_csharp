@@ -24,3 +24,8 @@ csc sentiment.cs -r:System.Data.dll -r:System.Web.dll -r:AlchemyAPI.dll
 csc relations.cs -r:System.Data.dll -r:System.Web.dll -r:AlchemyAPI.dll
 
 csc author.cs -r:System.Data.dll -r:System.Web.dll -r:AlchemyAPI.dll
+
+csc combined.cs -r:System.Data.dll -r:System.Web.dll -r:AlchemyAPI.dll
+ 
+csc taxonomy.cs -r:System.Data.dll -r:System.Web.dll -r:AlchemyAPI.dll
+ 

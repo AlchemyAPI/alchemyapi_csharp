@@ -25,3 +25,8 @@ dmcs sentiment.cs -r:System.Data.dll -r:System.Web.dll -r:../module/AlchemyAPI.d
 dmcs relations.cs -r:System.Data.dll -r:System.Web.dll -r:../module/AlchemyAPI.dll
 
 dmcs author.cs -r:System.Data.dll -r:System.Web.dll -r:../module/AlchemyAPI.dll
+
+dmcs combined.cs -r:System.Data.dll -r:System.Web.dll -r:../module/AlchemyAPI.dll
+ 
+dmcs taxonomy.cs -r:System.Data.dll -r:System.Web.dll -r:../module/AlchemyAPI.dll
+ 
