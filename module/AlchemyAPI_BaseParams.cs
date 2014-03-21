@@ -127,5 +127,13 @@ namespace AlchemyAPI
 
 			return retString;
 		}
+
+		protected string encodeBool(bool? val)
+		{
+			if (val.HasValue && val.Value)
+				return "1";
+			else
+				return "0";
+		}
 	}
 }

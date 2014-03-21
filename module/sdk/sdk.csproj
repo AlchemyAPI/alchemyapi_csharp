@@ -72,6 +72,9 @@
     <Compile Include="..\AlchemyAPI_CombinedDataParams.cs">
       <Link>AlchemyAPI_CombinedDataParams.cs</Link>
     </Compile>
+    <Compile Include="..\AlchemyAPI_TaxonomyParams.cs">
+      <Link>AlchemyAPI_TaxonomyParams.cs</Link>
+    </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>

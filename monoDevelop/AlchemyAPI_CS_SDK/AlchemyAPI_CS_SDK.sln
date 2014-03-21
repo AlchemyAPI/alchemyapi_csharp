@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "author", "..\..\example\aut
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "combined", "..\..\example\combined\combined.csproj", "{DC4C1286-3B69-4826-AA74-AAC87B34E4ED}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "taxonomy", "..\..\example\taxonomy\taxonomy.csproj", "{FD0F315B-C5F0-442F-B86C-E02886749B92}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,12 +29,17 @@ Global
 		{E61EB529-E86A-4273-940F-FA4A99378E92}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E61EB529-E86A-4273-940F-FA4A99378E92}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E61EB529-E86A-4273-940F-FA4A99378E92}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FD0F315B-C5F0-442F-B86C-E02886749B92}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FD0F315B-C5F0-442F-B86C-E02886749B92}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FD0F315B-C5F0-442F-B86C-E02886749B92}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FD0F315B-C5F0-442F-B86C-E02886749B92}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{E61EB529-E86A-4273-940F-FA4A99378E92} = {7D111981-ED8F-4E06-B135-A72B4278C6D4}
 		{DC4C1286-3B69-4826-AA74-AAC87B34E4ED} = {7D111981-ED8F-4E06-B135-A72B4278C6D4}
+		{FD0F315B-C5F0-442F-B86C-E02886749B92} = {7D111981-ED8F-4E06-B135-A72B4278C6D4}
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
-		StartupItem = ..\..\module\sdk\sdk.csproj
+		StartupItem = ..\..\example\taxonomy\taxonomy.csproj
 	EndGlobalSection
 EndGlobal

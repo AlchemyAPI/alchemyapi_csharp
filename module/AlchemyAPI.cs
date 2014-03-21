@@ -751,6 +751,43 @@ public class AlchemyAPI
 		return POST ("TextGetCombinedData", "text", parameters);
 	}
 	#endregion
+	
+	#region GetRankedTaxonomy
+	public string URLGetRankedTaxonomy (string url)
+	{
+		return URLGetRankedTaxonomy(url, new AlchemyAPI_TaxonomyParams());
+	}
+	public string URLGetRankedTaxonomy (string url, AlchemyAPI_TaxonomyParams parameters)
+	{
+		CheckURL(url);
+		parameters.setUrl(url);
+
+		return GET ("URLGetRankedTaxonomy", "url", parameters);
+	}
+	public string HTMLGetRankedTaxonomy (string html, string url)
+	{
+		return HTMLGetRankedTaxonomy(html, url, new AlchemyAPI_TaxonomyParams());
+	}
+	public string HTMLGetRankedTaxonomy (string html, string url, AlchemyAPI_TaxonomyParams parameters)
+	{
+		CheckHTML(html, url);
+		parameters.setHtml(html);
+		parameters.setUrl(url);
+
+		return POST ("HTMLGetRankedTaxonomy", "html", parameters);
+	}
+	public string TextGetRankedTaxonomy (string text)
+	{
+		return TextGetRankedTaxonomy(text, new AlchemyAPI_TaxonomyParams());
+	}
+	public string TextGetRankedTaxonomy (string text, AlchemyAPI_TaxonomyParams parameters)
+	{
+		CheckText(text);
+		parameters.setText(text);
+
+		return POST ("TextGetRankedTaxonomy", "text", parameters);
+	}
+	#endregion
 
 	private void CheckHTML(string html, string url)
 	{
@@ -839,6 +876,9 @@ public class AlchemyAPI
 
 			string xml = r.ReadToEnd();
 
+			if (string.IsNullOrEmpty(xml))
+				throw new XmlException("The API request returned back an empty response. Please verify that the url is correct.");
+			
 			XmlDocument xmlDoc = new XmlDocument();
 			xmlDoc.LoadXml(xml);
 

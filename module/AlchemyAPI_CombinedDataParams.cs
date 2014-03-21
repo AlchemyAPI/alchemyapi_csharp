@@ -199,13 +199,7 @@ namespace AlchemyAPI
 			}
 		}
 
-		private string encodeBool(bool? val)
-		{
-			if (val.HasValue && val.Value)
-				return "1";
-			else
-				return "0";
-		}
+
 
 	}
 }
