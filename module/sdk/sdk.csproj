@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.0</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{799E354F-E323-408C-9733-7F1896342663}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>sdk</RootNamespace>
+    <AssemblyName>sdk</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Web" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AssemblyInfo.cs" />
+    <Compile Include="..\AlchemyAPI.cs">
+      <Link>AlchemyAPI.cs</Link>
+    </Compile>
+    <Compile Include="..\AlchemyAPI_BaseParams.cs">
+      <Link>AlchemyAPI_BaseParams.cs</Link>
+    </Compile>
+    <Compile Include="..\AlchemyAPI_CategoryParams.cs">
+      <Link>AlchemyAPI_CategoryParams.cs</Link>
+    </Compile>
+    <Compile Include="..\AlchemyAPI_ConceptParams.cs">
+      <Link>AlchemyAPI_ConceptParams.cs</Link>
+    </Compile>
+    <Compile Include="..\AlchemyAPI_ConstraintQueryParams.cs">
+      <Link>AlchemyAPI_ConstraintQueryParams.cs</Link>
+    </Compile>
+    <Compile Include="..\AlchemyAPI_EntityParams.cs">
+      <Link>AlchemyAPI_EntityParams.cs</Link>
+    </Compile>
+    <Compile Include="..\AlchemyAPI_KeywordParams.cs">
+      <Link>AlchemyAPI_KeywordParams.cs</Link>
+    </Compile>
+    <Compile Include="..\AlchemyAPI_LanguageParams.cs">
+      <Link>AlchemyAPI_LanguageParams.cs</Link>
+    </Compile>
+    <Compile Include="..\AlchemyAPI_RelationParams.cs">
+      <Link>AlchemyAPI_RelationParams.cs</Link>
+    </Compile>
+    <Compile Include="..\AlchemyAPI_TargetedSentimentParams.cs">
+      <Link>AlchemyAPI_TargetedSentimentParams.cs</Link>
+    </Compile>
+    <Compile Include="..\AlchemyAPI_TextParams.cs">
+      <Link>AlchemyAPI_TextParams.cs</Link>
+    </Compile>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <Folder Include="sdk\" />
+  </ItemGroup>
+</Project>

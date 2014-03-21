@@ -1,0 +1,11 @@
+CHANGELOG
+
+0.8 - Added support for author extraction and targeted sentiment analysis.
+0.7 - Added support for relations extraction.
+0.6 - Added support for sentiment analysis, fixed time delay bug in
+      HTTP POST calls.
+0.5 - Added GetRankedConcepts calls, parameters objects.
+0.4 - Added GetRankedKeywords calls, added TextGetCategory call.
+0.3 - Added ConstraintQuery API call, general improvements.
+0.2 - Added setApiKey() call, setApiHost() call, updated API endpoint.
+0.1 - Initial Release
