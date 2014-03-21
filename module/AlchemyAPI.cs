@@ -789,6 +789,32 @@ public class AlchemyAPI
 	}
 	#endregion
 
+	#region GetImage
+	public string HTMLGetImage (string html, string url)
+	{
+		return HTMLGetImage(html, url, new AlchemyAPI_ImageParams());
+	}
+	public string HTMLGetImage (string html, string url, AlchemyAPI_ImageParams parameters)
+	{
+		CheckHTML(html, url);
+		parameters.setHtml(html);
+		parameters.setUrl(url);
+
+		return POST ("HTMLGetImage", "html", parameters);
+	}
+	public string URLGetImage (string url)
+	{
+		return URLGetImage (url, new AlchemyAPI_ImageParams());
+	}
+	public string URLGetImage (string url, AlchemyAPI_ImageParams parameters)
+	{
+		CheckURL(url);
+		parameters.setUrl(url);
+
+		return GET ("URLGetImage", "url", parameters);
+	}
+	#endregion
+
 	private void CheckHTML(string html, string url)
 	{
 		if (html.Length < 10)

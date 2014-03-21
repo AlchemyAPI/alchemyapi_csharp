@@ -3,11 +3,7 @@ using System.Web;
 
 namespace AlchemyAPI
 {
-	public enum PageImageMode
-	{
-		TrustMetadata,
-		AlwaysInfer
-	};
+
 
 	///
 	/// Enumeration that specifies what to extract from the text.
@@ -122,7 +118,7 @@ namespace AlchemyAPI
 			retString += "&extract=" + getExtractionString();
 
 			if (_imageMode != null)
-				retString += "&extractMode=" + getImageModeString();
+				retString += "&extractMode=" + AlchemyAPI_ImageParams.getImageModeString(_imageMode.Value);
 
 			if (_jsonpCallback != null)
 				retString += "&jsonp=" + _jsonpCallback;
@@ -185,21 +181,5 @@ namespace AlchemyAPI
 
 			return ret;
 		}
-
-		private string getImageModeString ()
-		{
-			switch (_imageMode) 
-			{
-			case PageImageMode.TrustMetadata:
-				return "trust-metadata";
-			case PageImageMode.AlwaysInfer:
-				return "always-infer";
-			default:
-				throw new ArgumentException("The specified image mode '" + _imageMode + "' is not supported.");
-			}
-		}
-
-
-
 	}
 }

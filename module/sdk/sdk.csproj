@@ -75,6 +75,9 @@
     <Compile Include="..\AlchemyAPI_TaxonomyParams.cs">
       <Link>AlchemyAPI_TaxonomyParams.cs</Link>
     </Compile>
+    <Compile Include="..\AlchemyAPI_ImageParams.cs">
+      <Link>AlchemyAPI_ImageParams.cs</Link>
+    </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>
