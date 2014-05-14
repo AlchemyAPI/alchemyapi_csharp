@@ -1,5 +1,6 @@
 CHANGELOG
 
+0.9 - Added support for the combined data call, the image extraction call, and the ranked taxonomy call.
 0.8 - Added support for author extraction and targeted sentiment analysis.
 0.7 - Added support for relations extraction.
 0.6 - Added support for sentiment analysis, fixed time delay bug in
