@@ -1,13 +1,16 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="../../module/AlchemyAPI.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="../../module/sdk/AlchemyAPI_RankedImageKeywords.cs">
     <Files>
-      <File FileName="../../module/AlchemyAPI_BaseParams.cs" Line="23" Column="15" />
+      <File FileName="../../module/AlchemyAPI_BaseParams.cs" Line="6" Column="2" />
       <File FileName="../../module/AlchemyAPI_CategoryParams.cs" Line="17" Column="37" />
       <File FileName="../../module/AlchemyAPI_TextParams.cs" Line="20" Column="34" />
       <File FileName="../../example/author.cs" Line="12" Column="66" />
       <File FileName="../../example/combined.cs" Line="9" Column="28" />
-      <File FileName="../../module/AlchemyAPI.cs" Line="154" Column="2" />
+      <File FileName="../../module/AlchemyAPI.cs" Line="66" Column="55" />
+      <File FileName="../../module/AlchemyAPI_TaxonomyParams.cs" Line="2" Column="1" />
+      <File FileName="../../module/sdk/AlchemyAPI_RankedImageKeywords.cs" Line="45" Column="21" />
+      <File FileName="../../module/AlchemyAPI_ImageParams.cs" Line="43" Column="34" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

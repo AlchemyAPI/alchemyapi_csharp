@@ -4,3 +4,7 @@ example/author/bin/
 example/combined/bin/
 example/image/bin/
 example/taxonomy/bin/
+example/AlchemyAPI.dll
+example/ranked_image_keywords/bin/
+module/AlchemyAPI.dll
+module/sdk/bin/

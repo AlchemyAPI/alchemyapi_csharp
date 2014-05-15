@@ -128,6 +128,11 @@ namespace AlchemyAPI
 			return retString;
 		}
 
+        public virtual byte[] GetPostData()
+        {
+            return null;
+        }
+
 		protected string encodeBool(bool? val)
 		{
 			if (val.HasValue && val.Value)
