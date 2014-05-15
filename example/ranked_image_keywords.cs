@@ -20,5 +20,9 @@ public class TestApp
         string ret = alchemyObj.ImageGetRankedImageKeywords(fozzle);
 
         Console.WriteLine(ret);
+
+        ret = alchemyObj.URLGetRankedImageKeywords("http://truestorieswithgill.com/wp-content/uploads/2013/09/20130915-190532.jpg");
+
+        Console.WriteLine(ret);
     }
 }

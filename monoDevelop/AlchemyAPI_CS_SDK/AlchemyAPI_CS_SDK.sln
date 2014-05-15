@@ -54,7 +54,7 @@ Global
 		{181E3CCB-A081-4CA5-963D-CA41B9886683} = {7D111981-ED8F-4E06-B135-A72B4278C6D4}
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
-		StartupItem = ..\..\example\taxonomy\taxonomy.csproj
+		StartupItem = ..\..\example\ranked_image_keywords\ranked_image_keywords.csproj
 		Policies = $0
 		$0.TextStylePolicy = $1
 		$1.FileWidth = 120
