@@ -1,5 +1,5 @@
 ================================
-AlchemyAPI .NET SDK: version 0.8
+AlchemyAPI .NET SDK: version 0.10
 ================================
 
 This is a .NET (C#) implementation of the AlchemyAPI SDK.  Mono and .NET

@@ -33,6 +33,7 @@
     <Reference Include="System.Xml" />
     <Reference Include="System.Data" />
     <Reference Include="System.Web" />
+    <Reference Include="System.Drawing" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AssemblyInfo.cs" />
@@ -77,6 +78,9 @@
     </Compile>
     <Compile Include="..\AlchemyAPI_ImageParams.cs">
       <Link>AlchemyAPI_ImageParams.cs</Link>
+    </Compile>
+    <Compile Include="..\AlchemyAPI_RankedImageKeywords.cs">
+      <Link>AlchemyAPI_RankedImageKeywords.cs</Link>
     </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

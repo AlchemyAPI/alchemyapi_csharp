@@ -118,7 +118,7 @@ namespace AlchemyAPI
 			retString += "&extract=" + getExtractionString();
 
 			if (_imageMode != null)
-				retString += "&extractMode=" + AlchemyAPI_ImageParams.getImageModeString(_imageMode.Value);
+				retString += "&extractMode=" + PageImageModeHelper.ToString(_imageMode.Value);
 
 			if (_jsonpCallback != null)
 				retString += "&jsonp=" + _jsonpCallback;

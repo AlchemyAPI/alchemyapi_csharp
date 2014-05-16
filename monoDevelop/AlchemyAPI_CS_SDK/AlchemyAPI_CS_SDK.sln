@@ -13,12 +13,18 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "taxonomy", "..\..\example\t
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "image", "..\..\example\image\image.csproj", "{B117A1D0-AAAD-4B03-8B20-A8AEDC2EE01A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ranked_image_keywords", "..\..\example\ranked_image_keywords\ranked_image_keywords.csproj", "{181E3CCB-A081-4CA5-963D-CA41B9886683}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{181E3CCB-A081-4CA5-963D-CA41B9886683}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{181E3CCB-A081-4CA5-963D-CA41B9886683}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{181E3CCB-A081-4CA5-963D-CA41B9886683}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{181E3CCB-A081-4CA5-963D-CA41B9886683}.Release|Any CPU.Build.0 = Release|Any CPU
 		{799E354F-E323-408C-9733-7F1896342663}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{799E354F-E323-408C-9733-7F1896342663}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{799E354F-E323-408C-9733-7F1896342663}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -45,8 +51,26 @@ Global
 		{DC4C1286-3B69-4826-AA74-AAC87B34E4ED} = {7D111981-ED8F-4E06-B135-A72B4278C6D4}
 		{FD0F315B-C5F0-442F-B86C-E02886749B92} = {7D111981-ED8F-4E06-B135-A72B4278C6D4}
 		{B117A1D0-AAAD-4B03-8B20-A8AEDC2EE01A} = {7D111981-ED8F-4E06-B135-A72B4278C6D4}
+		{181E3CCB-A081-4CA5-963D-CA41B9886683} = {7D111981-ED8F-4E06-B135-A72B4278C6D4}
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
-		StartupItem = ..\..\example\taxonomy\taxonomy.csproj
+		StartupItem = ..\..\example\ranked_image_keywords\ranked_image_keywords.csproj
+		Policies = $0
+		$0.TextStylePolicy = $1
+		$1.FileWidth = 120
+		$1.inheritsSet = VisualStudio
+		$1.inheritsScope = text/plain
+		$1.scope = text/x-csharp
+		$0.CSharpFormattingPolicy = $2
+		$2.StatementBraceStyle = NextLine
+		$2.ElseNewLinePlacement = NewLine
+		$2.CatchNewLinePlacement = NewLine
+		$2.FinallyNewLinePlacement = NewLine
+		$2.BeforeMethodDeclarationParentheses = False
+		$2.BeforeMethodCallParentheses = False
+		$2.BeforeConstructorDeclarationParentheses = False
+		$2.inheritsSet = Mono
+		$2.inheritsScope = text/x-csharp
+		$2.scope = text/x-csharp
 	EndGlobalSection
 EndGlobal
