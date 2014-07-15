@@ -32,5 +32,5 @@ dmcs taxonomy.cs -r:System.Data.dll -r:System.Web.dll -r:../module/AlchemyAPI.dl
 
 dmcs image.cs -r:System.Data.dll -r:System.Web.dll -r:../module/AlchemyAPI.dll
 
-dmcs ranked_image_keywords.cs -r:System.Data.dll -r:System.Web.dll -r:../module/AlchemyAPI.dll
+dmcs ranked_image_keywords.cs -r:System.Data.dll -r:System.Web.dll -r:../module/AlchemyAPI.dll -r:System.Drawing.dll
  
