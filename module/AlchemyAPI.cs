@@ -955,8 +955,18 @@ namespace AlchemyAPI
 
                     if (status.InnerText != "OK")
                     {
-                        System.ApplicationException ex =
-						new System.ApplicationException ("Error making API call.");
+                        string errorMessage = "Error making API call.";
+
+                        try
+                        {
+                            XmlNode statusInfo = root.SelectSingleNode("/results/statusInfo");
+                            errorMessage = statusInfo.InnerText;
+                        }
+                        catch
+                        {
+                            errorMessage = "An error occurred: Unable to access XmlNode /results/statusInfo";
+                        }
+                        System.ApplicationException ex = new System.ApplicationException (errorMessage);
 
                         throw ex;
                     }
@@ -970,8 +980,18 @@ namespace AlchemyAPI
 
                     if (status.InnerText != "OK")
                     {
-                        System.ApplicationException ex =
-						new System.ApplicationException ("Error making API call.");
+                        string errorMessage = "Error making API call.";
+
+                        try
+                        {
+                            XmlNode statusInfo = root.SelectSingleNode("/results/statusInfo");
+                            errorMessage = statusInfo.InnerText;
+                        }
+                        catch
+                        {
+                            errorMessage = "An error occurred: Unable to access XmlNode /results/statusInfo";
+                        }
+                        System.ApplicationException ex = new System.ApplicationException (errorMessage);
 
                         throw ex;
                     }
