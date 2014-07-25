@@ -1,3 +1,5 @@
+Note: THIS IS NOT PRODUCTON CODE. This SDK is example code to get you started making programmatic calls to AlchemyAPI. 
+
 ================================
 AlchemyAPI .NET SDK: version 0.10
 ================================
@@ -12,10 +14,10 @@ MONO
 
 INSTALLATION
 
-To compile this module, enter the "module" directory and run the "build.sh" 
+To compile this modul eand generate the AlchemyAPI.dll file, enter the "module" directory and run the "build.sh" 
 script.
 
-To install this module, copy the AlchemyAPI.dll file into your desired
+To install this module, copy the AlchemyAPI.dll file  created from the previous step into your desired
 .NET import directory, or set your MONO_PATH environment variable to point
 to the directory containing the compiled AlchemyAPI.dll file.
 
@@ -70,10 +72,10 @@ Windows .NET
 
 INSTALLATION
 
-To compile this module, enter the "module" directory and run the "build" 
+To compile this module and generate the AlchemyAPI.dll file, enter the "module" directory and run the "build" 
 script.
 
-To install this module, copy the AlchemyAPI.dll file into your desired
+To install this module, copy the AlchemyAPI.dll file generated from the previous step into your desired
 .NET import directory.  For purposes of running examples, the dll is
 copied into the example folder.
 
