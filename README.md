@@ -14,7 +14,7 @@ MONO
 
 INSTALLATION
 
-To compile this modul eand generate the AlchemyAPI.dll file, enter the "module" directory and run the "build.sh" 
+To compile this module and generate the AlchemyAPI.dll file, enter the "module" directory and run the "build.sh" 
 script.
 
 To install this module, copy the AlchemyAPI.dll file  created from the previous step into your desired
