@@ -31,7 +31,7 @@ and other tasks.
 All code samples are within the "example" directory.
 
 To run these code samples you must first edit the (example/api_key.txt) file, 
-adding your assigned Orchestr8 API key.
+adding your assigned AlchemyAPI API key.
 
 Compiling Code Samples:
 
@@ -88,7 +88,7 @@ and other tasks.
 All code samples are within the "example" directory.
 
 To run these code samples you must first edit the (example/api_key.txt) file, 
-adding your assigned Orchestr8 API key.
+adding your assigned AlchemyAPI API key.
 
 Compiling Code Samples:
 
