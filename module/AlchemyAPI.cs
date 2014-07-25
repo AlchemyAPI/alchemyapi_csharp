@@ -888,7 +888,7 @@ namespace AlchemyAPI
 
             Uri address = new Uri (uri.ToString());
             HttpWebRequest wreq = WebRequest.Create(address) as HttpWebRequest;
-            wreq.Proxy = GlobalProxySelection.GetEmptyWebProxy();
+            wreq.Proxy = null;
 
             byte[] postData = parameters.GetPostData();
 
@@ -913,7 +913,7 @@ namespace AlchemyAPI
             Uri address = new Uri (_requestUri + callPrefix + "/" + callName);
 
             HttpWebRequest wreq = WebRequest.Create(address) as HttpWebRequest;
-            wreq.Proxy = GlobalProxySelection.GetEmptyWebProxy();
+            wreq.Proxy = null;
             wreq.Method = "POST";
             wreq.ContentType = "application/x-www-form-urlencoded";
 
