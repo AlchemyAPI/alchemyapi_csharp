@@ -72,7 +72,7 @@ Windows .NET
 
 INSTALLATION
 
-To compile this module and generate the AlchemyAPI.dll file, enter the "module" directory and run the "build" 
+To compile this module and generate the AlchemyAPI.dll file, enter the "module" directory and run the "build.bat" 
 script.
 
 To install this module, copy the AlchemyAPI.dll file generated from the previous step into your desired
@@ -92,7 +92,7 @@ adding your assigned AlchemyAPI API key.
 
 Compiling Code Samples:
 
-   1. Run "build" (Compiles code using .NET)
+   1. Run "build.bat" (Compiles code using .NET)
 
 Running Code Samples:
 
