@@ -43,7 +43,6 @@
     <Reference Include="System.Drawing" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AlchemyAPI_Async.cs" />
     <Compile Include="AssemblyInfo.cs" />
     <Compile Include="..\AlchemyAPI.cs">
       <Link>AlchemyAPI.cs</Link>
