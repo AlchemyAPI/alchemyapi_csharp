@@ -1,4 +1,4 @@
-**This fork is intended to begin applying asynchronous access to the Alchemy interface. Please note that the target framework for this version is .Net 4.5.
+**This fork is intended to begin applying deeper asynchronous support to the client-side Alchemy C# interface. Please note that the target framework for this version is .Net 4.5.
 
 Note: THIS IS NOT PRODUCTON CODE. This SDK is example code to get you started making programmatic calls to AlchemyAPI. 
 
