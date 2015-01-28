@@ -52,22 +52,19 @@ namespace AlchemyAPI
 
         public void LoadAPIKey(string filename)
         {
-            StreamReader reader;
-
-            reader = File.OpenText(filename);
-
-            string line = reader.ReadLine();
-
-            reader.Close();
-
-            _apiKey = line.Trim();
-
-            if (_apiKey.Length < 5)
+            using (StreamReader reader = File.OpenText(filename))
             {
-                System.ApplicationException ex =
-                    new System.ApplicationException("Error loading API key.");
+                string line = reader.ReadLine();
 
-                throw ex;
+                _apiKey = line.Trim();
+
+                if (_apiKey.Length < 5)
+                {
+                    System.ApplicationException ex =
+                        new System.ApplicationException("Error loading API key.");
+
+                    throw ex;
+                }
             }
         }
 
@@ -888,11 +885,12 @@ namespace AlchemyAPI
             parameters.resetBaseParams();
 
             Uri address = new Uri(uri.ToString());
+
             HttpWebRequest wreq = WebRequest.Create(address) as HttpWebRequest;
             wreq.Proxy = null;
 
             byte[] postData = parameters.GetPostData();
-
+            
             if (postData == null)
             {
                 wreq.Method = "GET";
@@ -905,7 +903,6 @@ namespace AlchemyAPI
                     ps.Write(postData, 0, postData.Length);
                 }
             }
-
             return DoRequest(wreq, parameters.getOutputMode());
         }
 
@@ -917,7 +914,7 @@ namespace AlchemyAPI
             wreq.Proxy = null;
             wreq.Method = "POST";
             wreq.ContentType = "application/x-www-form-urlencoded";
-
+            
             StringBuilder d = new StringBuilder();
             d.Append("apikey=").Append(_apiKey).Append(parameters.getParameterString());
 
@@ -937,73 +934,71 @@ namespace AlchemyAPI
         private string DoRequest(HttpWebRequest wreq, AlchemyAPI_BaseParams.OutputMode outputMode)
         {
             wreq.Timeout = 2000;
+            string xml;
             using (HttpWebResponse wres = wreq.GetResponse() as HttpWebResponse) //CAN BE ASYNC
             {
-                StreamReader r = new StreamReader(wres.GetResponseStream());
-
-                string xml = r.ReadToEnd();
-
-                if (string.IsNullOrEmpty(xml))
-                    throw new XmlException("The API request returned back an empty response. Please verify that the url is correct.");
-
-                XmlDocument xmlDoc = new XmlDocument();
-                xmlDoc.LoadXml(xml);
-
-                XmlElement root = xmlDoc.DocumentElement;
-
-                if (AlchemyAPI_BaseParams.OutputMode.XML == outputMode)
+                using (StreamReader r = new StreamReader(wres.GetResponseStream()))
                 {
-                    XmlNode status = root.SelectSingleNode("/results/status");
-
-                    if (status.InnerText != "OK")
-                    {
-                        string errorMessage = "Error making API call.";
-
-                        try
-                        {
-                            XmlNode statusInfo = root.SelectSingleNode("/results/statusInfo");
-                            errorMessage = statusInfo.InnerText;
-                        }
-                        catch
-                        {
-                            errorMessage = "An error occurred: Unable to access XmlNode /results/statusInfo";
-                        }
-                        System.ApplicationException ex = new System.ApplicationException(errorMessage);
-
-                        throw ex;
-                    }
+                    xml = r.ReadToEnd();
                 }
-                else if (AlchemyAPI_BaseParams.OutputMode.RDF == outputMode)
-                {
-                    XmlNamespaceManager nm = new XmlNamespaceManager(xmlDoc.NameTable);
-                    nm.AddNamespace("rdf", "http://www.w3.org/1999/02/22-rdf-syntax-ns#");
-                    nm.AddNamespace("aapi", "http://rdf.alchemyapi.com/rdf/v1/s/aapi-schema#");
-                    XmlNode status = root.SelectSingleNode("/rdf:RDF/rdf:Description/aapi:ResultStatus", nm);
-
-                    if (status.InnerText != "OK")
-                    {
-                        string errorMessage = "Error making API call.";
-
-                        try
-                        {
-                            XmlNode statusInfo = root.SelectSingleNode("/results/statusInfo");
-                            errorMessage = statusInfo.InnerText;
-                        }
-                        catch
-                        {
-                            errorMessage = "An error occurred: Unable to access XmlNode /results/statusInfo";
-                        }
-                        System.ApplicationException ex = new System.ApplicationException(errorMessage);
-
-                        throw ex;
-                    }
-                }
-
-                return xml;
-
             }
+            if (string.IsNullOrEmpty(xml))
+                throw new XmlException("The API request returned back an empty response. Please verify that the url is correct.");
+
+            XmlDocument xmlDoc = new XmlDocument();
+            xmlDoc.LoadXml(xml);
+
+            XmlElement root = xmlDoc.DocumentElement;
+
+            if (AlchemyAPI_BaseParams.OutputMode.XML == outputMode)
+            {
+                XmlNode status = root.SelectSingleNode("/results/status");
+
+                if (status.InnerText != "OK")
+                {
+                    string errorMessage = "Error making API call.";
+
+                    try
+                    {
+                        XmlNode statusInfo = root.SelectSingleNode("/results/statusInfo");
+                        errorMessage = statusInfo.InnerText;
+                    }
+                    catch
+                    {
+                        errorMessage = "An error occurred: Unable to access XmlNode /results/statusInfo";
+                    }
+                    System.ApplicationException ex = new System.ApplicationException(errorMessage);
+
+                    throw ex;
+                }
+            }
+            else if (AlchemyAPI_BaseParams.OutputMode.RDF == outputMode)
+            {
+                XmlNamespaceManager nm = new XmlNamespaceManager(xmlDoc.NameTable);
+                nm.AddNamespace("rdf", "http://www.w3.org/1999/02/22-rdf-syntax-ns#");
+                nm.AddNamespace("aapi", "http://rdf.alchemyapi.com/rdf/v1/s/aapi-schema#");
+                XmlNode status = root.SelectSingleNode("/rdf:RDF/rdf:Description/aapi:ResultStatus", nm);
+
+                if (status.InnerText != "OK")
+                {
+                    string errorMessage = "Error making API call.";
+
+                    try
+                    {
+                        XmlNode statusInfo = root.SelectSingleNode("/results/statusInfo");
+                        errorMessage = statusInfo.InnerText;
+                    }
+                    catch
+                    {
+                        errorMessage = "An error occurred: Unable to access XmlNode /results/statusInfo";
+                    }
+                    System.ApplicationException ex = new System.ApplicationException(errorMessage);
+
+                    throw ex;
+                }
+            }
+            return xml;
         }
     }
-
 }
 
