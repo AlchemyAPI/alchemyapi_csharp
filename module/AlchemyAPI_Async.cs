@@ -14,29 +14,32 @@ namespace AlchemyAPI
 {
     public partial class AlchemyAPI
     {
-        async public Task<String> TextGetRankedNamedEntitiesAsync(string text, AlchemyAPI_EntityParams parameters)
+        async public Task<string> TextGetRankedNamedEntitiesAsync(string text, AlchemyAPI_EntityParams parameters)
         {
             CheckText(text);
             parameters.setText(text);
 
-            var res = await POSTasync("TextGetRankedNamedEntities", "text", parameters);
+            string res = await POSTasync("TextGetRankedNamedEntities", "text", parameters);
             return res;
         }
 
         private async Task<String> POSTasync(string callName, string callPrefix, AlchemyAPI_BaseParams parameters)
         {
             Uri address = new Uri(_requestUri + callPrefix + "/" + callName);
-            HttpClient hClient = new HttpClient();
-            hClient.Timeout = System.TimeSpan.FromMilliseconds(8000);
-            StringBuilder d = new StringBuilder();
-            d.Append("apikey=").Append(_apiKey).Append(parameters.getParameterString());
-            var s = new StringContent(d.ToString());
+            
+            using (HttpClient hClient = new HttpClient())
+            {
+                hClient.Timeout = System.TimeSpan.FromMilliseconds(8000);
+                StringBuilder d = new StringBuilder();
+                d.Append("apikey=").Append(_apiKey).Append(parameters.getParameterString());
+                var s = new StringContent(d.ToString());
 
-            var results = await hClient.PostAsync(address, s).ConfigureAwait(false);
-
-            String ret = await DoRequestAsync(results, parameters.getOutputMode());
-            return ret;
-
+                using (HttpResponseMessage results = await hClient.PostAsync(address, s).ConfigureAwait(false))
+                {
+                    String ret = await DoRequestAsync(results, parameters.getOutputMode());
+                    return ret;
+                }
+            }
         }
 
         /// <summary>
@@ -44,15 +47,13 @@ namespace AlchemyAPI
         /// </summary>
         /// <param name="response"></param>
         /// <param name="outputMode"></param>
-        /// <returns></returns>
+        /// <returns>XML</returns>
         async private Task<String> DoRequestAsync(HttpResponseMessage response, AlchemyAPI_BaseParams.OutputMode outputMode)
         {
             string xml;
             using (StreamReader r = new StreamReader(await response.Content.ReadAsStreamAsync()))
             {
-
                 xml = await r.ReadToEndAsync();
-
             }
             if (string.IsNullOrEmpty(xml))
                 throw new XmlException("The API request returned back an empty response. Please verify that the url is correct.");
@@ -109,7 +110,6 @@ namespace AlchemyAPI
                     throw ex;
                 }
             }
-
             return xml;
         }
     }
