@@ -22,6 +22,7 @@ To install this module, copy the AlchemyAPI.dll file  created from the previous 
 to the directory containing the compiled AlchemyAPI.dll file.
 
 TARGET FRAMEWORK
+
 Native HTTPClient async support is present within .Net Framework 4.5. Backwards compatibility can be enabled by removing AlchemyAPI_Async.cs and setting the Target Framework for the examples and sdk to the desired version.
 
 RUNNING EXAMPLES
