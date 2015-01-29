@@ -117,7 +117,7 @@ namespace AlchemyAPI
             return GET("URLGetRankedNamedEntities", "url", parameters);
         }
 
-        public string HTMLGetRankedNamedEntities(string html, string url)
+        public string HTMLGetRankedNamedEntitiesAsync(string html, string url)
         {
             CheckHTML(html, url);
 
@@ -933,9 +933,8 @@ namespace AlchemyAPI
 
         private string DoRequest(HttpWebRequest wreq, AlchemyAPI_BaseParams.OutputMode outputMode)
         {
-            wreq.Timeout = 2000;
             string xml;
-            using (HttpWebResponse wres = wreq.GetResponse() as HttpWebResponse) //CAN BE ASYNC
+            using (HttpWebResponse wres = wreq.GetResponse() as HttpWebResponse)
             {
                 using (StreamReader r = new StreamReader(wres.GetResponseStream()))
                 {
