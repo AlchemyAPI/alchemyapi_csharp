@@ -939,13 +939,18 @@ namespace AlchemyAPI
             {
                 StreamReader r = new StreamReader (wres.GetResponseStream());
 
-                string xml = r.ReadToEnd();
+                string response = r.ReadToEnd();
 
-                if (string.IsNullOrEmpty(xml))
-                    throw new XmlException ("The API request returned back an empty response. Please verify that the url is correct.");
-			
+                if (string.IsNullOrEmpty(response))
+                    throw new Exception ("The API request returned back an empty response. Please verify that the url is correct.");
+
+                if (AlchemyAPI_BaseParams.OutputMode.XML != outputMode && AlchemyAPI_BaseParams.OutputMode.RDF != outputMode)
+                {
+                    return response; // don't parse response, just return as is
+                }
+
                 XmlDocument xmlDoc = new XmlDocument ();
-                xmlDoc.LoadXml(xml);
+                xmlDoc.LoadXml(response);
 
                 XmlElement root = xmlDoc.DocumentElement;
 
@@ -997,7 +1002,7 @@ namespace AlchemyAPI
                     }
                 }
 
-                return xml;
+                return response;
 		
             }
         }
