@@ -6,7 +6,7 @@ AlchemyAPI .NET SDK: version 0.10
 
 This is a .NET (C#) implementation of the AlchemyAPI SDK.  Mono and .NET
 sections for installation and examples are below.  AlchemyAPI keys
-can be downloaded from alchemyapi.com
+can be downloaded from alchemyapi.com - **_Please note that this legacy AlchemyAPI SDK is no longer supported by IBM. Please use the Watson SDKs https://github.com/watson-developer-cloud?utf8=✓&query=sdk__**
 
 ================================
 MONO
