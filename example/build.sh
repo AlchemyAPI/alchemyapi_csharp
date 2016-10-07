@@ -6,6 +6,8 @@ dmcs concepts.cs -r:System.Data.dll -r:System.Web.dll -r:../module/AlchemyAPI.dl
 
 dmcs keywords.cs -r:System.Data.dll -r:System.Web.dll -r:../module/AlchemyAPI.dll
 
+dmcs keywords_json.cs -r:System.Data.dll -r:System.Web.dll -r:../module/AlchemyAPI.dll
+
 dmcs categories.cs -r:System.Data.dll -r:System.Web.dll -r:../module/AlchemyAPI.dll
 
 dmcs feed_links.cs -r:System.Data.dll -r:System.Web.dll -r:../module/AlchemyAPI.dll
